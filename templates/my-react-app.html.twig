@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block title %}Mon application React.js{% endblock %}
+
+{# On note le chemin vers l'appli react dans le block javascript #}
+{% block javascripts %}
+    {{ encore_entry_script_tags('my-react-app') }}
+{% endblock %}
+
+{% block body %}
+    <h1>Mon application React</h1>
+    <div id="the-react-app">
+        {# my react app will be inserted HERE! #}
+    </div>
+{% endblock %}

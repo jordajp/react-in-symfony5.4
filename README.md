@@ -7,7 +7,7 @@
 * la stack techniques :
     * symfony 5.4 
     * symfony webpack Encore
-    * typescript
+    * Typescript
     * React.js
 * Ce n'est pas :
    * un tuto React.js
@@ -15,14 +15,59 @@
 
 ## Les prérequis
 
+* [symfony-cli](https://symfony.com/download)
 * node 16+
 * npm
 
-> Voir l'[installation _via_ nvm](https://github.com/nvm-sh/nvm).
+> Pour node+npm, voir l'[installation _via_ nvm](https://github.com/nvm-sh/nvm).
+
+## Récupérer et utiliser ce squelette
+
+Pour récupérer le squelette :
+
+```shell
+git clone git@gitlab.inria.fr:dsi/react-in-symfony.git 
+````
+et classiquement :
+
+```shell
+php composer.phar install
+```
+
+puis un peu moins classiquement :
+
+```shell
+npm install
+# oh ! on a maintenant un répertoire node_modules/
+```
+
+## Buildons !
+
+
+```shell
+npm run build
+# oh ! on a plein de trucs dans public/build/
+```
+
+Allez, un p'tit coup d'œil à l'appli :
+
+```shell
+symfony server:start
+
+```
+
+Pour développer et builder automatiquement :
+
+```shell
+npm run watch
+# ça va surveiller assets/ et rebuilder si des changements sont détectées
+```
+
+(attention, ça ne fonctionne pas toujours...)
 
 ## Ce qu'il faut installer pour ajouter du React.js (avec typescript)
 
-> C'est déjà fait dans ce squelette !
+> Tout ça est déjà fait dans ce squelette !
 
 ### webpack encore
 
@@ -48,11 +93,13 @@ npm install ts-loader
 ### webpack.config.js
 
 ```javascript
+// webpack.config.js
+// ...
 Encore
         // plein de trucs...
         .enableTypeScriptLoader()
         .enableReactPreset()
-        .addEntry('my-react-app', '/assets/react/my-react-app.tsx') // le chemin vers l'appli react
+       // plein de trucs...
 
 ```
 
@@ -69,22 +116,23 @@ Encore
 
 Le fichier principal est `assets/react/my-react-app.tsx`
 
-## Buildons !
+On ajoute ce chemin dans `webpack.config.js`:
 
-```shell
-npm run build
+
+```javascript
+// webpack.config.js
+// ...
+Encore
+        // plein de trucs...
+        .addEntry('my-react-app', '/assets/react/my-react-app.tsx') // le chemin vers l'appli react
+       // plein de trucs...
+
 ```
 
-Pour développer et builder automatiquement :
-
-```shell
-npm run watch
-```
-
-(attention, ça ne fonctionne pas toujours...)
 
 ## Pour aller plus loin
 
-* bootstrap à la sauce react : react-bootstrap
-* la gestion des routes côté client dans react : react router
-* l'internationalisation : react-intl
+* bootstrap à la sauce react : [react-bootstrap](https://react-bootstrap.github.io)
+* la gestion des routes côté client dans react : [react router](https://github.com/remix-run/react-router)
+* l'internationalisation : [react-intl](https://formatjs.io/docs/react-intl/)
+* [Le projet RADAR/REx](https://gitlab.inria.fr/dsi/radar/rex) 

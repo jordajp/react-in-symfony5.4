@@ -1,3 +1,21 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
 body {
     background-color: lightgray;
+}
+
+#country-list {
+    list-style: none;
+}
+
+.country-card {
+    margin-bottom: 1em;
+}
+
+.field-name {
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+#form-filter {
+    margin-bottom: 1em;
 }

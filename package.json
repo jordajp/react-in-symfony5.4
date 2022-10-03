@@ -23,6 +23,8 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "bootstrap": "^5.2.2",
+        "react-bootstrap": "^2.5.0",
         "ts-loader": "^9.3.1"
     }
 }

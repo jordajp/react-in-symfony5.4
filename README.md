@@ -132,7 +132,7 @@ Encore
 
 ## Pour aller plus loin
 
-* bootstrap à la sauce react : [react-bootstrap](https://react-bootstrap.github.io)
+* bootstrap à la sauce react : [react-bootstrap](https://react-bootstrap.github.io) (voir la branche `feature/jpj/list-country` pour un exemple)
 * la gestion des routes côté client dans react : [react router](https://github.com/remix-run/react-router)
 * l'internationalisation : [react-intl](https://formatjs.io/docs/react-intl/)
-* [Le projet RADAR/REx](https://gitlab.inria.fr/dsi/radar/rex) 
+* [Le projet RADAR/REx](https://gitlab.inria.fr/dsi/radar/rex)  utilise ces 3 composants.

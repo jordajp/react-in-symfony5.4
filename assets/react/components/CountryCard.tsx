@@ -13,7 +13,7 @@ const CountryCard: FC<CountryCardProps> = ({country}) => {
             <ListGroup>
                 <ListGroup.Item>
                     <span className='field-name'>Nom (EN)</span>
-                    <span className='field-value'>{country.en_name}</span>
+                    <span className='field-value' lang='en'>{country.en_name}</span>
                 </ListGroup.Item>
                 <ListGroupItem>
                     <span className='field-name'>Nom (natif)</span>

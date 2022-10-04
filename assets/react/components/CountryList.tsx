@@ -1,6 +1,7 @@
 import {FC} from "react";
 import {Countries, Country} from "../Country";
 import CountryCard from "./CountryCard";
+import {Alert, Col, Row} from "react-bootstrap";
 
 type CountryListProps = {
     countries: Countries
@@ -17,9 +18,19 @@ const CountryList: FC<CountryListProps> = ({countries, filter}) => {
         }
     }
 
-    return <ul id='country-list'>
-        <li>{list.map(c => <CountryCard key={c.name} country={c}/>)}</li>
-    </ul>
+    return <>
+        <Row>
+            <Col><Alert variant='success'>{list.length} pays trouvés</Alert></Col>
+        </Row>
+        <Row>
+            <Col>
+                <ul id='country-list' >
+                    <li>{list.map(c => <CountryCard key={c.name} country={c}/>)}</li>
+                </ul>
+            </Col>
+        </Row>
+
+    </>
 }
 
 export default CountryList

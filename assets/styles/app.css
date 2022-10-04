@@ -2,9 +2,17 @@
 body {
     background-color: lightgray;
 }
+main {
+    margin: 0 1em;
+}
+h1 {
+    text-align: center;
+    margin: auto;
+}
 
 #country-list {
     list-style: none;
+    padding-left: 0;
 }
 
 .country-card {
@@ -18,4 +26,19 @@ body {
 
 #form-filter {
     margin-bottom: 1em;
+}
+
+#form-control {
+
+}
+
+nav {
+    background: black;
+    padding: 1em;
+    color: white;
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
 }

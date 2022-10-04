@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {Form, FormSelect} from "react-bootstrap";
+import {Form, Row} from "react-bootstrap";
 
 
 type SelectorProps = {
@@ -8,12 +8,18 @@ type SelectorProps = {
 }
 
 const Selector: FC<SelectorProps> = ({setFilter, value}) => {
-    return <Form id='form-filter'>
-        <Form.Group>
-            <Form.Label>Filter</Form.Label>
-            <Form.Control value={value} onChange={e => setFilter(e.target.value)}></Form.Control>
-        </Form.Group>
-    </Form>
+    return <Row>
+        <Form id='form-filter'>
+            <Form.Group controlId='form-filter-input'>
+                <Form.Label>Filter la liste</Form.Label>
+                <Form.Control value={value}
+                              placeholder='Entrez une partie du nom du pays'
+                              onChange={e => setFilter(e.target.value)}>
+
+                </Form.Control>
+            </Form.Group>
+        </Form>
+    </Row>
 }
 
 export default Selector;

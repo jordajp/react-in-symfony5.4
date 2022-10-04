@@ -3,7 +3,7 @@
  */
 import {Countries} from "./Country";
 
-export async function fetcher(): Promise<Countries> {
+export async function countryFetcher(): Promise<Countries> {
     const url = '/api/v1/countries';
     const result = await fetch(url);
     return await result.json();

@@ -2,14 +2,15 @@
 
 ## Présentation
 
-* But : montrer comment ajouter du React.js (un peu...) dans une application symfony
-* use case : une application symfony « standard », avec une des fonctionnalités qui réclame du JS  suffisamment compliqué pour qu'on envisage d'utiliser du React.js  
-* la stack techniques :
+* __But__ : montrer comment ajouter du React.js (un peu...) dans une application symfony
+* __Use case__ : une application symfony « standard », avec une des fonctionnalités qui réclame du JS  suffisamment compliqué pour qu'on envisage d'utiliser du React.js  
+* __La stack techniques__ :
     * symfony 5.4 
     * symfony webpack Encore
     * Typescript
     * React.js
-* Ce n'est pas :
+    * React bootstrap, pour se faciliter un peu la vie
+* __Ce n'est pas__ :
    * un tuto React.js
    * un tuto symfony
 
@@ -132,7 +133,7 @@ Encore
 
 ## Pour aller plus loin
 
-* bootstrap à la sauce react : [react-bootstrap](https://react-bootstrap.github.io) (voir la branche `feature/jpj/list-country` pour un exemple)
+* bootstrap à la sauce react : [react-bootstrap](https://react-bootstrap.github.io) (utilisé dans cette application)
 * la gestion des routes côté client dans react : [react router](https://github.com/remix-run/react-router)
 * l'internationalisation : [react-intl](https://formatjs.io/docs/react-intl/)
 * [Le projet RADAR/REx](https://gitlab.inria.fr/dsi/radar/rex)  utilise ces 3 composants.

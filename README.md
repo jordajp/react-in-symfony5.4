@@ -4,12 +4,12 @@
 
 * __But__ : montrer comment ajouter du React.js (un peu...) dans une application symfony
 * __Use case__ : une application symfony « standard », avec une des fonctionnalités qui réclame du JS  suffisamment compliqué pour qu'on envisage d'utiliser du React.js  
-* __La stack techniques__ :
+* __La stack technique__ :
     * symfony 5.4 
     * symfony webpack Encore
     * Typescript
     * React.js
-    * React bootstrap, pour se faciliter un peu la vie
+    * React bootstrap
 * __Ce n'est pas__ :
    * un tuto React.js
    * un tuto symfony
@@ -61,12 +61,14 @@ Pour développer et builder automatiquement :
 
 ```shell
 npm run watch
-# ça va surveiller assets/ et rebuilder si des changements sont détectées
+# ça va surveiller assets/ et rebuilder si des changements sont détectés
 ```
 
 (attention, ça ne fonctionne pas toujours...)
 
 ## Ce qu'il faut installer pour ajouter du React.js (avec typescript)
+
+Si vous avez une application symfony 5.4 existante et que vous voulez y ajouter du React.js, voici ce qu'il faut faire.
 
 > Tout ça est déjà fait dans ce squelette !
 
@@ -78,10 +80,12 @@ pour lancer webpack (builder JS) à la sauce symfony
 composer require symfony/webpack-encore-bundle 
 ```
 
-### la stack Typescript + react
+### la stack Typescript + React.js
 
 ```shell
 npm install -D typescript react react-dom @types/node @types/react @types/react-dom @babel/preset-react
+# si vous voulez utiliser react-bootstrap:
+npm install react-bootstrap bootstrap
 ```
 
 ```shell
@@ -130,10 +134,16 @@ Encore
 
 ```
 
+## La documentation
 
+* [Symfony / Managing CSS and JavaScript](https://symfony.com/doc/current/frontend.html) (la documentation officielle de webpack Encore)
+* [Symfony / Enabling React.js](https://symfony.com/doc/current/frontend/encore/reactjs.html) (doc officielle)
+* [Symfony / Enabling Typescript](https://symfony.com/doc/current/frontend/encore/typescript.html) (doc officielle)
+* [symfony react demo (github)](https://github.com/thomaskanzig/symfony-react-demo) un projet SF 6.0 dont je me suis inspiré pour ce squelette
 ## Pour aller plus loin
 
 * bootstrap à la sauce react : [react-bootstrap](https://react-bootstrap.github.io) (utilisé dans cette application)
 * la gestion des routes côté client dans react : [react router](https://github.com/remix-run/react-router)
 * l'internationalisation : [react-intl](https://formatjs.io/docs/react-intl/)
 * [Le projet RADAR/REx](https://gitlab.inria.fr/dsi/radar/rex)  utilise ces 3 composants.
+

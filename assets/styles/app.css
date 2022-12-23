@@ -1,0 +1,49 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+#a42-ac-button {
+    display: none;
+}
+body {
+    background-color: lightgray;
+}
+main {
+    margin: 0 1em;
+}
+h1 {
+    text-align: center;
+    margin: auto;
+}
+
+#country-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.country-card {
+    margin-bottom: 1em;
+}
+
+.field-name {
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+#form-filter {
+    margin-bottom: 1em;
+}
+
+#form-control {
+
+}
+
+nav {
+    background: black;
+    padding: 1em;
+    color: white;
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+}

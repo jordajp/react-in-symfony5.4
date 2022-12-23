@@ -7,6 +7,12 @@ type SelectorProps = {
     value: string
 }
 
+/**
+ * Form filter component
+ * @param setFilter
+ * @param value
+ * @constructor
+ */
 const Selector: FC<SelectorProps> = ({setFilter, value}) => {
     return <Row>
         <Form id='form-filter'>

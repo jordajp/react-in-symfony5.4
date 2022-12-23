@@ -6,6 +6,11 @@ interface CountryCardProps {
     country: Country;
 }
 
+/**
+ * Component to display one country data
+ * @param country
+ * @constructor
+ */
 const CountryCard: FC<CountryCardProps> = ({country}) => {
     return <Card className='country-card'>
         <Card.Header>{country.name}</Card.Header>

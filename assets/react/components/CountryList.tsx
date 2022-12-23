@@ -25,6 +25,7 @@ const CountryList: FC<CountryListProps> = ({countries, filter}) => {
         <Row>
             <Col>
                 <ul id='country-list' >
+                    {/* key attribute must be provided when using a list of component */}
                     <li>{list.map(c => <CountryCard key={c.name} country={c}/>)}</li>
                 </ul>
             </Col>

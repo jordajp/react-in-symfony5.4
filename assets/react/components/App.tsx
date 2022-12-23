@@ -6,6 +6,9 @@ import CountryList from "./CountryList";
 import Selector from "./Selector";
 
 
+/**
+ * Root component for the React app.
+ */
 const App: FC = () => {
     const [countries, setCountries] = useState<Countries | null>(null);
     const [filter, setFilter] = useState<string>('')

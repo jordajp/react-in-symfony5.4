@@ -1,90 +1,96 @@
-# Squelette d'application symfony 5.4 + React.js
+# Application example symfony 5.4 + React.js (using typescript)
 
-## Présentation
+See also the [README in french](README.fr.md).
 
-* __But__ : montrer comment ajouter du React.js (un peu...) dans une application symfony
-* __Use case__ : une application symfony « standard », avec une des fonctionnalités qui réclame du JS  suffisamment compliqué pour qu'on envisage d'utiliser du React.js  
-* __La stack technique__ :
+## Presentation
+
+* __Aim__ :Explain how to add a little bit of React.js in a symfony app.
+* __Use case__ : A classic symfony app with some tricky js part, and we think it's worth while considering a « serious » framework.
+* __The technical stack__ :
     * symfony 5.4 
     * symfony webpack Encore
     * Typescript
     * React.js
     * React bootstrap
-* __Ce n'est pas__ :
-   * un tuto React.js
-   * un tuto symfony
+* __THIS IS ONT__ :
+   * a React.js tuto
+   * a symfony tuto
 
-## Les prérequis
+
+
+## Prerequisite
 
 * [symfony-cli](https://symfony.com/download)
 * node 16+
 * npm
 
-> Pour node+npm, voir l'[installation _via_ nvm](https://github.com/nvm-sh/nvm).
+> For node+npm, see [installation _with_ nvm](https://github.com/nvm-sh/nvm).
 
-## Récupérer et utiliser ce squelette
+## Download the app
 
 Pour récupérer le squelette :
 
 ```shell
 git clone git@gitlab.inria.fr:dsi/react-in-symfony.git 
 ````
-et classiquement :
+Install PHP components:
 
 ```shell
 php composer.phar install
+# vendor/ is now full of things
 ```
 
-puis un peu moins classiquement :
+Install JS components:
 
 ```shell
 npm install
-# oh ! on a maintenant un répertoire node_modules/
+#  node_modules/ is now full of things
 ```
 
-## Buildons !
+## Let's build!
 
 
 ```shell
 npm run build
-# oh ! on a plein de trucs dans public/build/
+#  public/build/ is now created
 ```
 
-Allez, un p'tit coup d'œil à l'appli :
+It's time to have a look at the app now:
 
 ```shell
 symfony server:start
 
 ```
 
-Pour développer et builder automatiquement :
+To code and automatically rebuild:
 
 ```shell
 npm run watch
-# ça va surveiller assets/ et rebuilder si des changements sont détectés
+# will watch assets/ and automatically rebuild at need. 
 ```
 
-(attention, ça ne fonctionne pas toujours...)
+(caution! may sometime failed, e.g if you modify webpack.config.j. In this case kill (Ctrl-C) and rerun)
 
-## Ce qu'il faut installer pour ajouter du React.js (avec typescript)
+## What you must install to have React.js (with typescript) in your symfony app
 
-Si vous avez une application symfony 5.4 existante et que vous voulez y ajouter du React.js, voici ce qu'il faut faire.
+
+If you have an existing Symfony 5.4 app, and you want to add  React.js, here is what you should do.
 
 > Tout ça est déjà fait dans ce squelette !
 
 ### webpack encore
 
-pour lancer webpack (builder JS) à la sauce symfony
+To run webpack (JS builder) at the symfony mode.
 
 ```shell
 composer require symfony/webpack-encore-bundle 
 ```
 
-### la stack Typescript + React.js
+### Typescript + React.js
 
 ```shell
 npm install -D typescript react react-dom @types/node @types/react @types/react-dom @babel/preset-react
-# si vous voulez utiliser react-bootstrap:
+# If you want to use  react-bootstrap:
 npm install react-bootstrap bootstrap
 ```
 
@@ -93,7 +99,7 @@ npm install ts-loader
 ```
 
 
-## Ce qu'il faut configurer pour ajouter du React.js (avec typescript)
+## Configuration to get React.js (with typescript)
 
 ### webpack.config.js
 
@@ -110,40 +116,41 @@ Encore
 
 ### tsconfig.js
 
-> Voir `tsconfig.json`
+> See `tsconfig.json`, there are plenty of explanations there.
 
-## Côté symfony, on définie une route et un point d'ancrage pour l'appli React.js
+## Symfony side: define a route and a hook point for the React.js part
 
-* le contrôleur : `src/Controller/MyReactAppController.php`
-* le template : `template/my-react-app.html.twig`
+* Controller, see  `src/Controller/MyReactAppController.php`
+* Viem, see  `template/my-react-app.html.twig`
 
-## On code l'appli symfony 
+## React.js app coding 
 
-Le fichier principal est `assets/react/my-react-app.tsx`
+The main file is `assets/react/my-react-app.tsx`
 
-On ajoute ce chemin dans `webpack.config.js`:
+This file path is added in `webpack.config.js`:
 
 
 ```javascript
 // webpack.config.js
 // ...
 Encore
-        // plein de trucs...
-        .addEntry('my-react-app', '/assets/react/my-react-app.tsx') // le chemin vers l'appli react
-       // plein de trucs...
+        // many stuffs...
+        .addEntry('my-react-app', '/assets/react/my-react-app.tsx') // the path to the react app
+       // many stuffs...
 
 ```
 
-## La documentation
+## Resources
 
-* [Symfony / Managing CSS and JavaScript](https://symfony.com/doc/current/frontend.html) (la documentation officielle de webpack Encore)
-* [Symfony / Enabling React.js](https://symfony.com/doc/current/frontend/encore/reactjs.html) (doc officielle)
-* [Symfony / Enabling Typescript](https://symfony.com/doc/current/frontend/encore/typescript.html) (doc officielle)
-* [symfony react demo (github)](https://github.com/thomaskanzig/symfony-react-demo) un projet SF 6.0 dont je me suis inspiré pour ce squelette
-## Pour aller plus loin
+* [Symfony / Managing CSS and JavaScript](https://symfony.com/doc/current/frontend.html) (Webpack Encore official doc)
+* [Symfony / Enabling React.js](https://symfony.com/doc/current/frontend/encore/reactjs.html) (Official doc)
+* [Symfony / Enabling Typescript](https://symfony.com/doc/current/frontend/encore/typescript.html) (Official doc)
+* [symfony react demo (github)](https://github.com/thomaskanzig/symfony-react-demo) a Symfony 6 demo I look at to build this tuto.
+* 
+## Do more in your React.js app
 
-* bootstrap à la sauce react : [react-bootstrap](https://react-bootstrap.github.io) (utilisé dans cette application)
-* la gestion des routes côté client dans react : [react router](https://github.com/remix-run/react-router)
-* l'internationalisation : [react-intl](https://formatjs.io/docs/react-intl/)
-* [Le projet RADAR/REx](https://gitlab.inria.fr/dsi/radar/rex)  utilise ces 3 composants.
+* Bootstrap for React.js : [react-bootstrap](https://react-bootstrap.github.io) (utilisé dans cette application)
+* Client side router for React : [react router](https://github.com/remix-run/react-router)
+* Internationalization in React.js : [react-intl](https://formatjs.io/docs/react-intl/)
+
 

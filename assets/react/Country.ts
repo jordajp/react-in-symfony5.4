@@ -1,3 +1,6 @@
+/**
+ * Country data schema definition
+ */
 export type Country = {
     name: string
     en_name: string
